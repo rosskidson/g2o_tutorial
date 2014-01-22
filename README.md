@@ -54,7 +54,7 @@ rosrun g2o_example example
 
 View and optimize
 ```
-rosrun g2o_viewer example example_g2o.g2o
+rosrun g2o_viewer g2o_viewer example_g2o.g2o
 ```
 
 Select a variant of lm for optimizing!
