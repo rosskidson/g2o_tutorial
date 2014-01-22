@@ -57,6 +57,7 @@ Take note that g2o_viewer depends on g2o_example to pull in custom types.  If yo
 TODO
 --
 
+-  Include code to show how to optimize the graph (so far only optimizing with g2o viewer)
 -  Bundle adjustment with real data
 -  Example of optimization for extrinsic calibration
 
