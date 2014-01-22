@@ -22,7 +22,7 @@ I have just one example so far: 3D keyframe SLAM with a monocular camera.  Bundl
 Installation
 --
 
-This has been programmed for ROS groovy using rosbuild.  Should work for older versions of ROS too.  
+This has been programmed for ROS groovy using rosbuild.  Should work for older versions of ROS too.  This assumes you have cloned this repos into a ros workspace that works with rosbuild
 
 I don't know anything about this catkin business so please don't ask!
 
