@@ -1,9 +1,23 @@
-g2o_tutorial
+g2o tutorial
 ============
 
-simple tutorial for g2o using ROS.
+g2o is an open source c++ general graph optimization framework.  It has been developed in the context of robotics and simultaneous localization and mapping however it is a general optimization framework and may easily be used for other purposes.
 
-Just one example so far: 3D keyframe SLAM with a monocular camera.  Bundle adjusts keyframe positions and landmarks using reprojection error assuming a pinhole camera model.  Keyframe poses, landmarks and landmark observations are all synthetically generated
+g2o github:
+
+https://github.com/RainerKuemmerle/g2o
+
+Original publication:
+
+http://ais.informatik.uni-freiburg.de/publications/papers/kuemmerle11icra.pdf
+
+Introduction/tutorial paper:
+
+http://openslam.informatik.uni-freiburg.de/data/svn/g2o/trunk/g2o/doc/g2o.pdf
+
+I found the example code in g2o not to be the best for getting started because there are no examples with visualizations, and all the code resides in the library, that is, they do not show how to use the library and related tools in your own project.  This repository attempts to provide such examples.
+
+I have just one example so far: 3D keyframe SLAM with a monocular camera.  Bundle adjusts keyframe positions and landmarks using reprojection error assuming a pinhole camera model.  Keyframe poses, landmarks and landmark observations are all synthetically generated
 
 Installation
 --
