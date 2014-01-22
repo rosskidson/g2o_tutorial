@@ -28,9 +28,7 @@ I don't know anything about this catkin business so please don't ask!
 
 First install the sys debs:
 ```
-sudo apt-get install libglew1.6-dev libglewmx1.6-dev glew-utils
-sudo apt-get install libqt4-dev libqglviewer-qt4-dev
-sudo apt-get install libsuitesparse-dev
+sudo apt-get install libglew1.6-dev libglewmx1.6-dev glew-utils libqt4-dev libqglviewer-qt4-dev libsuitesparse-dev
 ```
 
 Then compile:
