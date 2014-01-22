@@ -1,0 +1,16 @@
+<package>
+  <description brief="g2o_viewer">
+
+     g2o_viewer
+
+  </description>
+  <author>Ross Kidson</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/g2o_viewer</url>
+  <depend package="g2o"/>
+  <depend package="g2o_example"/>
+
+</package>
+
+

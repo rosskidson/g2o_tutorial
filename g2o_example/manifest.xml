@@ -1,0 +1,21 @@
+<package>
+  <description brief="g2o_example">
+
+     g2o_example
+
+  </description>
+  <author>ross</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/g2o_example</url>
+  <depend package="g2o"/>
+  <depend package="roscpp"/>
+
+  <export>
+      <cpp cflags="-I${prefix}/include -I${prefix}/src" lflags="-L${prefix}/lib "/>
+  </export>
+
+
+</package>
+
+

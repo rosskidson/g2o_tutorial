@@ -1,0 +1,13 @@
+<package>
+  <description brief="g2o">
+  </description>
+  <author>G2O</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+  <export>
+    <cpp cflags="-I${prefix}/include/ -I/usr/include/suitesparse" lflags="-L${prefix}/lib/ " />
+  </export>
+</package>
+
+

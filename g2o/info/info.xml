@@ -1,0 +1,94 @@
+<?xml version='1.0'?>
+
+<project>
+  <name>g2o: A General Framework for Graph Optimization</name>
+
+  <author>
+    <name>Rainer Kuemmerle</name>
+    <url>http://www.informatik.uni-freiburg.de/~kuemmerl</url>
+  </author>
+  <author>
+    <name>Giorgio Grisetti</name>
+    <url>http://www.informatik.uni-freiburg.de/~grisetti</url>
+  </author>
+  <author>
+    <name>Hauke Strasdat</name>
+    <url>http://www.doc.ic.ac.uk/~strasdat/</url>
+  </author>
+  <author>
+    <name>Kurt Konolige</name>
+    <url>http://www.willowgarage.com/pages/people/kurt-konolige</url>
+  </author>
+  <author>
+    <name>Wolfram Burgard</name>
+    <url>http://www.informatik.uni-freiburg.de/~burgard/</url>
+  </author>
+
+  <briefdescription>
+    g2o is an open-source C++ framework for optimizing graph-based nonlinear
+    error functions.  g2o has been designed to be easily
+    extensible to a wide range of problems and a new problem typically
+    can be specified in a few lines of code.  The current implementation
+    provides solutions to several variants of SLAM and BA.
+  </briefdescription>
+
+  <description>
+    A wide range of problems in robotics as well as in computer-vision
+    involve the minimization of a non-linear error function that can be
+    represented as a graph. Typical instances are simultaneous
+    localization and mapping (SLAM) or bundle adjustment (BA).  The
+    overall goal in these problems is to find the configuration of
+    parameters or state variables that maximally explain a set of
+    measurements affected by Gaussian noise.  g2o is an open-source C++
+    framework for such nonlinear least squares problems.  g2o has been
+    designed to be easily extensible to a wide range of problems and a
+    new problem typically can be specified in a few lines of code.  The
+    current implementation provides solutions to several variants of SLAM
+    and BA.  g2o offers a performance comparable to implementations of
+    state-of-the-art approaches for the specific problems (02/2011).
+  </description>
+
+  <requirement>
+    Developed under Linux (GCC). Tested under Linux, Windows (MinGW), and OS X.
+    CMake is needed for building. Uses SuiteSparse if available, requires Qt4
+    and libQGLViewer for the GUI. Includes a copy of Eigen3.
+  </requirement>
+
+  <map>Graphs (nodes and edge)</map>
+
+  <input>
+    Nodes and edges of a graph.
+  </input>
+
+  <logformat>
+    A set of simple text messages to represent nodes and edges of the graph.
+    Note that examples files are in the repository. See folder data.
+  </logformat>
+
+  <paper>
+    <title>g2o: A General Framework for Graph Optimization</title>
+    <authorlist>Rainer Kuemmerle, Giorgio Grisetti, Hauke Strasdat, Kurt Konolige, and Wolfram Burgard</authorlist>
+    <publishedin>IEEE International Conference on Robotics and Automation (ICRA)</publishedin>
+    <year>2011</year>
+    <url>http://ais.informatik.uni-freiburg.de/publications/papers/kuemmerle11icra.pdf</url>
+  </paper>
+
+  <license>
+    g2o is licenced under LGPL v3, whereas the g2o_viewer and g2o_incremental are licensed under GPL v3
+  </license>
+
+  <furthermore>
+    C++ code, well-coded, compact, efficient.
+
+    We thank Simon Julier for submitting patches to achieve compatibility with
+    Mac OS X.
+
+    The code of the OpenSLAM repository is a stable release. Please see
+    <![CDATA[
+    <a href="https://github.com/RainerKuemmerle/g2o" target="_blank">g2o on github</a>
+    ]]>
+    for our devel code.
+    
+  </furthermore>
+
+</project>
