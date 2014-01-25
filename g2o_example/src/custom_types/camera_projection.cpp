@@ -7,6 +7,8 @@
 
 #include "camera_projection.h"
 
+#include <iostream>
+
 bool CameraProjection
 ::read(std::istream& is)
 {
@@ -52,19 +54,13 @@ bool CameraProjection
 Eigen::Vector2d CameraProjection
 ::cam_map(const Eigen::Vector3d & P_cam) const
 {
-  //std::cout << "P_cam " << P_cam << "\n";
-  //std::cout << "K " << K_ << "\n";
   Eigen::Vector3d P_normalized;
   P_normalized[0] = P_cam[0]/P_cam[2];
   P_normalized[1] = P_cam[1]/P_cam[2];
   P_normalized[2] = 1;
-  //std::cout << "P_normalized " << P_normalized << "\n";
   Eigen::Vector3d P_img = K_ * P_normalized;
-  //std::cout << "P_img " << P_img << "\n";
-  Eigen::Vector2d uv(P_img[0], P_img[1]);
-  //std::cout << "P_uv " << uv << "\n";
 
-  return uv;
+  return P_img.block<2,1>(0,0);
 }
 
 Eigen::Vector3d CameraProjection

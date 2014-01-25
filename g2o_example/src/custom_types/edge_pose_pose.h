@@ -1,36 +1,27 @@
 /*
- * edge_pose_landmark_reproject.h
+ * edge_pose_pose.h
  *
  *  Created on: Jan 19, 2013
  *      Author: ross kidson
  */
 
 
-#ifndef EDGE_POSE_LANDMARK
-#define EDGE_POSE_LANDMARK
+#ifndef EDGE_POSE_POSE
+#define EDGE_POSE_POSE
 
 #include <g2o/core/base_binary_edge.h>
 #include <g2o/core/hyper_graph_action.h>
 
-#include "camera_projection.h"
 #include "vertex_pose.h"
-#include "vertex_landmarkxyz.h"
 
-const int NUM_VERTICES = 2;
-
-class EdgePoseLandmarkReproject : public  g2o::BaseBinaryEdge<2, Eigen::Vector2d, VertexPose, VertexLandmarkXYZ>
+//Template arguments: 6 Dimensions, store edge as Eigen::Isometry, edge is between VertexPose and VertexPose
+class EdgePosePose : public  g2o::BaseBinaryEdge<6, Eigen::Isometry3d, VertexPose, VertexPose>
 {
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
-  EdgePoseLandmarkReproject()
-  {
-    resizeParameters(1);
-    if(!installParameter(cam, 0, 0))
-      std::cout << "problem with loading camera parameter in reprojection object\n";
-    _vertices.resize(NUM_VERTICES);
-    resize(NUM_VERTICES);
-  }
+  EdgePosePose()
+  { }
 
   virtual bool
   read                       (std::istream& is);
@@ -39,16 +30,14 @@ public:
   void
   computeError               ();
 
-  CameraProjection * cam;
-
 };
 
 /**
  * \brief visualize the 3D pose vertex
  */
-class EdgePoseLandmarkReprojectDrawAction: public g2o::DrawAction{
+class EdgePosePoseDrawAction: public g2o::DrawAction{
   public:
-    EdgePoseLandmarkReprojectDrawAction();
+    EdgePosePoseDrawAction();
     virtual HyperGraphElementAction* operator()(g2o::HyperGraph::HyperGraphElement* element, g2o::HyperGraphElementAction::Parameters* params_);
     g2o::HyperGraphElementAction* _cacheDrawActions;
   protected:

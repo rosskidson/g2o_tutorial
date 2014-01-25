@@ -7,6 +7,8 @@
 #include "g2o/core/hyper_graph_action.h"
 #include "g2o/types/slam3d/isometry3d_mappings.h"
 
+#include "math_functions.hpp"
+
 /**
  * \brief 3D pose Vertex, represented as an Isometry3d
  *
@@ -34,35 +36,6 @@
 
       virtual bool read(std::istream& is);
       virtual bool write(std::ostream& os) const;
-
-      Eigen::Matrix3d fromCompactQuat(const Eigen::Vector3d& v) {
-        double w = 1-v.squaredNorm();
-        if (w<0)
-          return Eigen::Matrix3d::Identity();
-        else
-          w=sqrt(w);
-        return Eigen::Quaterniond(w, v[0], v[1], v[2]).toRotationMatrix();
-      }
-
-      Eigen::Isometry3d fromVectorQuat(const Eigen::Matrix<double, 6, 1>& v){
-        Eigen::Isometry3d t;
-        t = fromCompactQuat(v.block<3,1>(3,0));
-        t.translation() = v.block<3,1>(0,0);
-        return t;
-      }
-
-      /**
-       * compute a fast approximation for the nearest orthogonal rotation matrix.
-       * The function computes the residual E = RR^T - I which is then used as follows:
-       * R := R - 1/2 R E
-       */
-      template <typename Derived>
-      void approximateNearestOrthogonalMatrix(const Eigen::MatrixBase<Derived>& R)
-      {
-        Eigen::Matrix3d E = R.transpose() * R;
-        E.diagonal().array() -= 1;
-        const_cast<Eigen::MatrixBase<Derived>&>(R) -= 0.5 * R * E;
-      }
 
       /**
        * update the position of this vertex. The update is in the form

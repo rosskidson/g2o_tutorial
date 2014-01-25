@@ -8,12 +8,10 @@
 #ifndef CAMERA_PROJECTION_H_
 #define CAMERA_PROJECTION_H_
 
-//g2o include
-#include <g2o/core/base_vertex.h>
-#include <g2o/core/base_binary_edge.h>
-#include <g2o/core/base_multi_edge.h>
-#include <g2o/core/base_unary_edge.h>
+#include <g2o/core/parameter.h>
 
+#include <Eigen/Core>
+#include <Eigen/LU>
 
 class CameraProjection : public g2o::Parameter
 {

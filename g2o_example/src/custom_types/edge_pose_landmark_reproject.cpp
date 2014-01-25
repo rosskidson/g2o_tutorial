@@ -10,8 +10,6 @@
 
 #include "draw_functions.hpp"
 
-#include <g2o/types/slam3d/vertex_se3.h>
-
 bool EdgePoseLandmarkReproject
 ::write(std::ostream& os) const
 {

@@ -40,5 +40,10 @@ ADD_SUBDIRECTORY(src/custom_types)
 #target_link_libraries(${PROJECT_NAME} another_library)
 #rosbuild_add_boost_directories()
 #rosbuild_link_boost(${PROJECT_NAME} thread)
-rosbuild_add_executable(example src/main.cpp)
-target_link_libraries(example ${G2O_LIBS} g2o_custom_types)
+rosbuild_add_executable(ba_synth_data src/ba_synth_data.cpp)
+target_link_libraries(ba_synth_data ${G2O_LIBS} g2o_custom_types)
+
+rosbuild_add_executable(pose_adjust src/pose_adjust.cpp)
+target_link_libraries(pose_adjust ${G2O_LIBS} g2o_custom_types)
+
+

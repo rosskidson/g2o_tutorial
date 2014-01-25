@@ -14,7 +14,7 @@
 #include <g2o/core/block_solver.h>
 
 // Landmark generation parameters
-const int NUM_LANDMARKS = 40;
+const int NUM_LANDMARKS = 20;
 const double X_MIN = -4.0;
 const double X_MAX =  4.0;
 const double Y_MIN = -4.0;
@@ -29,9 +29,9 @@ const double C_X = 500;
 const double C_Y = 500;
 
 // noise to be added to initial estimates
-const double X_NOISE = 2.0;
-const double Y_NOISE = 2.0;
-const double Z_NOISE = 2.0;
+const double X_NOISE = 4.0;
+const double Y_NOISE = 4.0;
+const double Z_NOISE = 4.0;
 
 // noise to be added to observations (pixels)
 const double U_NOISE = 3.0;
