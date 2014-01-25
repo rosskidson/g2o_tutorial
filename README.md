@@ -42,7 +42,7 @@ g2o_tutorial/g2o$ make
 g2o_tutorial/g2o_example$ make
 g2o_tutorial/g2o_viewer$ make
 ```
-Run the example
+Run an example
 --
 
 Create a g2o graph using synthetic data
@@ -57,14 +57,7 @@ rosrun g2o_viewer g2o_viewer example_g2o.g2o
 
 Select a variant of lm for optimizing!
 
-Understand the Code
---
-
-Read g2o_example/src/main.cpp to see how to populate a g2o graph.
-
-Read g2o_example/src/custom_types/* to see how to define your own types for g2o
-
-Take note that g2o_viewer depends on g2o_example to pull in custom types.  If you make your own types and want to visualize your graph with g2o_viewer, you will need to include an equivalent of register_types.h in g2o_viewer/g2o_viewer/g2o_view.cpp as well as link against your custom types lib in CMakeLists.txt
+Please read the wiki for more information about using these examples!
 
 TODO
 --
